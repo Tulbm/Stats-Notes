@@ -5,6 +5,7 @@ M_{X}(t)=E(e^{ tX})=\sum_{x}e^{ tx}f(x)\quad \quad  & \text{discrete} \\
 M_{X}(t)=E(e^{ tX})=\int_{-\infty}^\infty e^{ tx}f(x)\,dx\quad \quad  & \text{continuous} \\
 \end{align}
 $$
+
 The function can be used to find an specific moment:
 $$
 \mu_{r}'=E(X^r)=\left. \frac{d^rM_{X}(t)}{dt^r} \right|_{t=0}

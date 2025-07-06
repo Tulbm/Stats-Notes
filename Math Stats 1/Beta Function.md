@@ -1,5 +1,12 @@
 
 $$
+\begin{align}
+M_{X}(t)=E(e^{ tX})=\sum_{x}e^{ tx}f(x)\quad \quad  & \text{discrete} \\
+M_{X}(t)=E(e^{ tX})=\int_{-\infty}^\infty e^{ tx}f(x)\,dx\quad \quad  & \text{continuous} \\
+\end{align}
+$$
+
+$$
 B(\alpha,\beta)=\left[ \frac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)\Gamma(\beta)} \right]^{-1}
 $$
 
