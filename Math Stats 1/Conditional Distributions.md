@@ -21,6 +21,7 @@ $$
 # [[Independency]]
 
 If $X$ and $Y$ are independent:
+
 $$
 \begin{align}
 f_{X,Y}=

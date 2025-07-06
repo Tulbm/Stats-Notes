@@ -1,4 +1,4 @@
-
+.
 $$
 B(\alpha,\beta)=\left[ \frac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)\Gamma(\beta)} \right]^{-1}
 $$
