@@ -1,8 +1,13 @@
-
 $$
 \begin{align}
-M_{X}(t)=E(e^{ tX})=\sum_{x}e^{ tx}f(x)\quad \quad  & \text{discrete} \\
-M_{X}(t)=E(e^{ tX})=\int_{-\infty}^\infty e^{ tx}f(x)\,dx\quad \quad  & \text{continuous} \\
+M_{X}(t)=E(e^{tX}) & =\int_{-\infty}^\infty e^{tx}\frac{1}{\beta^\alpha \Gamma(\alpha)} x^{\alpha-1}e^{ -x/\beta}dx \\
+ & =\frac{1}{\beta^\alpha\Gamma(\alpha)}\int_{0}^\infty e^{tx-x/\beta}x^{\alpha-1}dx\left. \right|_{t=0}\\
+ & =\frac{1}{\beta^\alpha\Gamma(\alpha)}\int_{0}^\infty e^{-x(1/\beta-t)}x^{\alpha-1}dx \quad \left( u=x\left( \frac{1}{\beta}-t \right) \right)\\ 
+ & =\frac{1}{\beta^\alpha\Gamma(\alpha)}\int_{0}^\infty e^{ -u}\left( \frac{u}{\frac{1}{\beta}-t} \right)^{\alpha-1} \frac{du}{\frac{1}{\beta}-t} \quad \left( x=\frac{u}{\frac{1}{\beta}-t}, dx = \frac{du}{\left( \frac{1}{\beta}-t \right)} \right) \\
+ & =\frac{1}{\beta^\alpha \Gamma(\alpha)}\left( \frac{1}{\frac{1}{\beta}-t} \right)^\alpha \int_{0}^\infty e^{-u}u^{\alpha-1}du \\
+ & =\left( \frac{1}{\beta}-t \right)^{-\alpha} \frac{1}{\beta^\alpha \Gamma(\alpha)}\Gamma(\alpha) \\
+ & =\left( \left( \frac{1}{\beta}-t \right)\beta \right)^{-\alpha} \\
+ M_{X}(t)& =(1-t\beta){^{ -\alpha}} \\
 \end{align}
 $$
 
