@@ -1,3 +1,4 @@
+
 $$
 \begin{align}
 M_{X}(t)=E(e^{ tX})=\sum_{x}e^{ tx}f(x)\quad \quad  & \text{discrete} \\
