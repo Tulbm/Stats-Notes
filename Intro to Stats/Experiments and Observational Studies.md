@@ -1,0 +1,50 @@
+## Experiments and Observational Studies
+- explores relationships between variables
+	- response variables
+		- consequences
+	- explanatory variables
+		- explains or possibly causes changes in the response variables
+- observational study
+	- the researches observe and measure variables, but dont impose conditions
+	- do not give strong evidence of a **causal** relationship/link by itself
+		- can be part of the story, we may only strongly suspect the relationship found with observational studies to be causal but need to be cautious
+			- its better to have multiple studies with similar consistent results
+			- is there a plausible explanation for the causal link? (logic, a rationale)
+			- do related experiments show a similar effect?
+		- many other (lurking/unmeasured) variables could be related to the response and explanatory variables
+			- maybe its not the cocaine, but the fact that cocaine users may not have the best diet, are more susceptible to alcohol and other drugs
+		- ![](https://i.imgur.com/MymKtxr.png)
+	- confounding
+		- concept about the problems related to lurking variables in observational studies
+		- two variables are confounded if its impossible to separate their effects on the response variable
+		- example
+			- diet and exercise are confounded on the left side
+				- can't separate their effects on the response
+				- has to be used when there are restrictions, like one variable is not possible without the other
+					- oven type with max temperature
+			- right side is called a 2x2 factorial design (no confounding)
+				- 2 levels of 2 levels
+				- can measure the interactions between the different diets and exercises
+			- ![](https://i.imgur.com/UfQBbkE.png)
+	- natural experiments
+		- a notion where an intervention occurs due to forces of nature or other factors beyond the control of the researchers
+		- example
+			- empty skies after 9/11
+			- only time where researches can use an empty sky, but the scenario for the experiment came from factors outside of the researchers' control
+- experiments
+	- a well-designed randomized experiment is the best way to show causation
+		- if we determine there is a relationship between the explanatory and the response variable, we can be confident that the explanatory variable causes changes in the response
+	- experimental units
+		- the things you are giving the conditions to
+		- when assigned to random groups, we ensure that differences between them are due to chance alone
+	- example
+		- mices being randomly assigned to different groups with different diets, one more restrictive than the other
+			- ![](https://i.imgur.com/ATESfYO.png)
+		- diet is the explanatory variable
+		- lifetime is the response
+		- results
+			- can use a one-way ANOVA to analyze this and see if there exists a relationship between the two variables
+			- results are related to the population that the mice came from, for it to be applied generally, we have to go back to the population and make sure that the population is also "general"
+			- ![](https://i.imgur.com/YWzDzYm.png)
+- points to keep in mind
+	- As long as the sample is only a small portion of the population, in interpreting the results it is the sample size that matters and not the population size.

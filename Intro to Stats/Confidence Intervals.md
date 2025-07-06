@@ -1,0 +1,95 @@
+- confidence intervals are calculated using sample data, and they give a range of plausible values for a parameter
+	- parameter = characteristic of the population
+	- most common confidence level = 95% (we pick it)
+	- examples
+		- we may be 95% confident that $\mu$ lies in the interval (-0.27, 3.14)
+		- we may be 99% confident that $\sigma$ lies in the interval (2.5, 13.4)
+[[Inference for Proportions|proportions]]
+# interval estimation of $\mu$ when $\sigma$ is known
+- using the $\sigma$ from the population (difficult to know)
+- assumptions
+	- sample data must be a simple random sample (not biased)
+	- population must be normally distributed
+		- very important for small sample sizes, not nearly as important for large sample sizes
+			- [[Central Limit Theorem]] helps us out
+- interval
+	- start with the sample mean and add and subtract the margin of error
+		- $\bar X\ \pm$ Margin of Error
+		- $\bar X \pm z_{\alpha /2}\frac{\sigma}{\sqrt n}$ 
+- confidence level
+	- most common choice is 95% (by far)
+		- means that in repeated sampling, 95% of the (95%) confidence intervals calculated using this method will contain $\mu$ 
+			- we can be 95% confident that the true mean lies between $X\pm$ Margin of Error
+			- ![](https://i.imgur.com/4a6UC8H.png)
+	- margin of error for a 95% interval
+		- If [[Test Statistics#Z test|Z]] is a standard normal random variable
+			- $P(-1.96< Z < 1.96) = 0.95$  
+			- $Z=\frac{\bar X-\mu}{\sigma/\sqrt n}$ 
+		- margin of error = $Z_{\alpha/2}\frac{\sigma}{\sqrt n}$ 
+			- 95% -> $Z_{.025}$
+				- area from 0 to 2.5% or from 97.5% to 100% 
+			- $\sigma$ = population sd
+				- the larger the value of $\sigma$, the larger the margin of error
+				- ![](https://i.imgur.com/5rDmqa6.png)
+			- n = sample size
+				- the larger the sample size, the smaller the margin of error
+				- ![](https://i.imgur.com/7WKbZz1.png)
+			- $1-\alpha$ = confidence level
+				- larger the confidence level, the larger the margin of error
+				- 2nd derivative at 95% = 0
+				- ![](https://i.imgur.com/xeAcRld.png)
+	- when we draw the sample
+		- $P(-1.96< Z < 1.96) = 0.95$
+		- $P(-1.96< \frac{\bar X-\mu}{\sigma/\sqrt n} < 1.96) = 0.95$
+		- $P(\bar X-1.96\frac{\sigma}{\sqrt n}< \mu < \bar X +1.96\frac{\sigma}{\sqrt n}) = 0.95$
+			- Confidence Interval is always related to a parameter ( $\mu$ )
+- in the general case, the endpoints of ($1-\alpha$ )100% interval are
+	- $\bar X\pm Z_{\alpha /2} \frac{\sigma}{\sqrt n}$ 
+	- for a 90% interval,
+		- $\alpha = 0.10$ 
+		- each tail of outliers = 0.05
+		- $z_{.05} = 1.645...$ 
+		- then 90% CI for $\mu = \bar X \pm 1.645 \frac{\sigma}{\sqrt n}$ 
+# interval estimation of $\mu$ when $\sigma$ is unknown
+- using the $\sigma$ from sample data
+- assumptions
+	- sampling from a normally distributed population
+		- simple random sampling
+	- the standard normal variable ($Z = \frac{\bar X-\mu}{\sigma/\sqrt n}$) has the standard normal distribution
+- intervals
+	- $\bar X \pm t_{\alpha/2}\frac{s}{\sqrt n}$
+		- $t_{\alpha /2}$ is a lot bigger and gets closer to $z_{\alpha /2}$ as the degrees of freedom approach $\infty$ 
+			- ![](https://i.imgur.com/HVgp6rv.png)
+			- $s/\sqrt n$ = standard error
+	- [[Normal Distribution#T distribution|t distribution]] instead of $z$ (margin of error?)
+		- $\frac{\bar X-\mu}{s/\sqrt n}$ has the [[Test Statistics#T test|t]] distribution with $n-1$ degrees of freedom
+			- s = statistic instead of the parameter 
+			- $s^2=\frac{\sum(X_i-\bar X)^2}{n-1}$ 
+# interval estimation when population is not normal
+- i.e. population not normally distributed
+- t-procedures used are robust to many violations of the normality assumption
+	- robust = the procedure still performs reasonably well when the assumption is violated
+	- t works perfectly when the population is normally distributed
+- with skewness or outliers, other methods may be better than the t procedure
+	- guideline
+		- $n >40$ = the t procedure works well in most situations
+		- $15<n<40$ = t procedures perform reasonably well, but outliers/skewness can cause problems
+		- $n<15$ = need to be confident that the population is approximately normal before using the t procedures
+	- inference procedure based on a different parametric distribution
+		- exponential, Weibull, etc
+	- transforming the data
+		- sometimes $\sqrt n$ , logs, reciprocals are approximately normal
+		- t test will then give us a 95% CI for the mean of the ln(n)/$\sqrt n$/etc  of the variables
+		- to back-transform the interval after will be related to the true median
+			- do the inverse operation
+				- the range we get is a 95% CI for the true median (not mean)
+				- on the original, $\mu$ is the mean and the median
+					- the values get changed in the transformation, so ofc the mean of the transformed values will get some bias to some side, so after going back we dont get the same value
+						- median is the same tho, (ig bc they're all in a line, order is still the same)
+	- distribution-free procedures (nonparametric procedures)
+	- simulation study
+		- ![](https://i.imgur.com/i4ka0nY.png)
+		- ![](https://i.imgur.com/1XZXuOM.png)
+			- Confidence levels assumed to be 95%, table = actual % after testing
+			- exponential/log with small sample size = lies
+[[quantile-quantile plots (QQ plot)]]

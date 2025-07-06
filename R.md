@@ -1,0 +1,197 @@
+# objects
+- objects
+	- declaration
+		- vectorname<-c(1,2,3,4)
+	- typing the object name outputs a list of the data set
+	- mean(mydatainR$weight)
+		- mydatainR is the object
+		- weight is a variable inside the object
+			- mean(weight) only if the object is attached already
+			- ![](https://i.imgur.com/6wviavq.png)
+	- `mean(mydatainR[,1])
+		- mean of the first column in the data set
+	- `sd(mydatainR$weight[1:3])
+		- sd of just the first 3 weights
+	- r is case sensitive
+# general commands
+- commands
+	- data management
+		- objects()
+			- R lists all saved objects
+		- head(object)
+			- shows the first few rows of the data
+		- text()
+			- text(x, y = NULL, labels = seq_along(x$x), adj = NULL, pos = NULL, offset = 0.5, vfont = NULL, cex = 1, col = NULL, font = NULL, ...)
+		- split()
+			- split(x, f, drop = FALSE)
+				- **x:** represents data vector or data frame
+				- **f:** represents factor to divide the data
+				- **drop:** represents logical value which indicates if levels that do not occur should be dropped
+			- split(puffinsA1, puffinsA1$Cloud)
+		- attach(mydatainR)
+			- R will look in this date set for variable names
+			- can then use commands directly with the variables
+			- problematic if its the same name as another object
+	- basic formulas
+		- pnorm(value,mean,sd)
+			- area to the left of value of the PDF
+			- default = standard normal distribution, mean = 0, sd = 1
+		- qnorm(area,mean,sd)
+			- outputs value that has the area given to the left of it
+		- mean(vectorname)
+			- mean of the vector
+		- choose(n,x)
+			- combination formula/binomial coefficient
+			- $$  \begin{pmatrix}   n\\   x   \end{pmatrix}= \frac{n!}{x!(n-x)!}$$
+			- dbinom(x,n,P(X))
+			- pbinom(x,n,P(X))
+				- for when we want probability of <= x
+		- var(vectorname)
+			- gives the variance of the vector
+		- sd(vectorname)
+			- standard deviation of the vector
+			- same thing as sqrt(var(vectorname))
+		- summary(vectorname)
+			- yields the mean and the 5-number summary (minimum, first quartile, median, third quartile, maximum)
+		- max, min, sum, median
+	- defining functions
+		- fib_closed <- function(n) { 1/sqrt(5) * (((1 + sqrt(5))/2)^n - ((1 - sqrt(5))/2)^n)}
+		- print(fib_closed(seq(30)))
+			- seq(30) = `[1,30`
+	- importing csv files
+		- mydatainR<-read.csv(file.choose(),sep=",",header=TRUE)
+			- sep=","because its comma separated values(csv)
+				- can be omitted if the file is .csv
+			- header=TRUE means that the first row represents column names, not data values
+			- both are the default so can just do mydatainR<-read.csv(file.choose())
+				- empty choose opens file explorer, can also specify the path
+					- mydatainR<-read.csv("C:/Documents and Settings/JB/My Documents/mydata.csv",header=TRUE)
+	- help(commandname) / ?commandname
+		- gives syntax, possibles options and examples for the command
+	- vectors can be used in commands
+		- `mysecondvector<- 10+2*myfirstvector
+# plots
+- plots
+	- commands
+		- hist(mydatainR$weight)
+			- hist(change,xlab="Percent change in body weight",ylab="Frequency", main="Histogram of Percent Change in Body Weight at Autopsy", cex.lab=1.5,nclass=20,col="green")
+				- xlab = adds x-axis label
+				- ylab = adds y-axis label
+				- main = adds title
+				- nclass = changes the number of classes
+				- col = changes colour
+				- `cex.main/lab/axis controls`the size of the title/labels
+					- default cex = 1, ratio
+				- ![](https://i.imgur.com/WKpcqef.png)
+			- ![](https://i.imgur.com/r6gsWTE.png)
+		- boxplot(mydatainR$weight)
+			- `boxplot(mydatainR$weight~mydatainR$group)
+				- side-by-side boxplots of the weight variable for each group individually
+				- one for weight values in group A, other for the values in group B
+			- boxplot(Butterfat~Breed,ylab="BUTTERFAT, YO", names=c("Breed 1", "Breed sqrt(4)", "Third one","Last one?","No, really, last one"),  col="pink",cex.axis=1.5,main="Not a great title but it’s not bad",cex.main=2)
+				- xlab = adds x-axis label
+				- ylab = adds y-axis label
+				- main = adds title
+				- names = adds groups names
+				- col = changes colour
+				- `cex.main/lab/axis controls`the size of the title/labels
+					- default cex = 1, ratio
+				- ![](https://i.imgur.com/JSIyEyD.png)
+		- plot(height,weight)
+			- basic scatterplot of weight on height
+			- plot(Moonlight,Count,xlab="Moonlight%",ylab="Number of Passes",cex.lab=1.6,cex=2,col="blue",cex.axis=1.5)
+				- xlab = adds x-axis label
+				- ylab = adds y-axis label
+				- main = adds title
+				- pch = controls the plotting symbol
+					- help(pch) for more
+					- pch = 1 -> open circle, 15 = filled-in square, 16 = fille-in circle
+				- col = changes colour
+				- `cex.main/lab/axis controls`the size of the title/labels
+					- default cex = 1, ratio
+				- ![](https://i.imgur.com/uZJ31BA.png)
+		- qqnorm(mydatainR$weight)
+			- a normal quantile-quantile plot of the weight variable
+			- qqline(mydatainR$weight)
+				- adds a line to the normal qq plot already created
+		- barplot(object)
+			- barplot(count,names=c("Ugh","Meh","Not too shabby"),xlab="Daily Vibe",ylab="Frequency", cex.names=1.2,cex.lab=1.5,col="aquamarine")
+				- ![](https://i.imgur.com/3NfL6FR.png)
+# Calculations
+- calculating
+	- binomial probabilities
+		- dbinom(x,n,p)
+			- yields P (X = x) for a binomial distribution
+			- dbinom(3,10,.5) yields 0.1171875
+			- gives the probability that the random variable is exactly equal to x
+		- pbinom(x,n,p)
+			- yields P (X ≤ x) for a binomial distribution
+			- pbinom(3,10,.5) yields 0.171875
+			- gives the probability that the random variable is less than or equal to x
+				- the cumulative distribution function (??)
+	- poisson probabilities
+		- dpois(x,lambda)
+			- yields P (X = x) for a Poisson distribution
+			- dpois(3,5) yields 0.1403739
+		- ppois(x,lambda)
+			- yields P (X ≤ x) for a Poisson distribution
+			- ppois(3,5) yields 0.2650259
+	- normal and t distribution
+		- normal
+			- pnorm(z)
+				- yields the area to the left of z under the standard normal curve
+				- pnorm(-1.96) yields the value 0.02499790, the area to the left of −1.96 under the standard normal curve
+				- pnorm(x,mu,sigma)
+					- yields the area to the left of x under a normal curve with μ = mu and σ = sigma
+					- pnorm(2.5,2,1.8) yields 0.6094085, which  is the area to the left of 2.5 under a normal curve with a mean of 2 and standard deviation of 1.8
+						- mu = mean
+						- sigma = standard deviation
+			- qnorm(p)
+				- gives the value of z such that the area to the left of z under a standard normal curve is p
+					- inverse function of pnorm
+				- qnorm(p, mu, sigma)
+					- yields the value of x such that the area to the left of x under a normal curve with a mean of mu and standard deviation of sigma
+					- qnorm(.43,12,24) would yield the 43rd percentile of a normal distribution with a mean of 12 and a standard deviation of 24
+			- dnorm(x, mu, sigma)
+				- yields the probability density function (height of the curve at point x) for a normal distribution with a mean of mu and standard deviation of sigma
+				- normally used when plotting the normal distribution pdf
+			- rnorm(n ,mu, sigma)
+				- randomly generates n values from a normal distribution with a mean of mu and a standard deviation of sigma
+				- often used in (my?) simulation functions
+			- punif(value,parameter1,parameter2)
+				- probability (of) uniform distribution
+				- $P(X\leq value)$ between parameter1 and 2
+			- qunif(value,parameter1,parameter2)
+				- inverse function of punif, gives value when inputting the area
+		- t
+			- pt(x, degrees of freedom)
+				- yields the area to the left of x under a t distribution with df degrees of freedom
+				- pt(-1.96,5) yields the value 0.05364398, the area to the left of −1.96 under a t distribution with 5 degrees of freedom
+			- qt(area, degrees of freedom)
+				- inverse of pt
+				- yields the value x such that the area to the left of x under a t distribution with df degrees of freedom is p
+				- qt(0.975,23) yields 2.068658
+	- f distribution
+		- pf(x, numerator df, denominator df)
+			- area to the left, [[P-values|p-value]] is to the right
+	- tests
+		- t procedures
+			- one sample
+				- t.test(mydatainR$weight,mu=10)
+					- tests the null hypothesis that the true mean of the weight variable is 10
+					- It also outputs a 95% confidence interval for the true mean of the weight variable
+						- The default is a two-sided alternative hypothesis, and the default confidence level is 95%.
+			- two sample
+				- t.test(weight~group)
+					- tests the null hypothesis that μA = μB and outputs a 95% confidence interval for μA − μB
+					- R chooses the name that comes first alphabetically to be Group 1 for the grouping variable
+					- default = Welch method (unpooled variance)
+						- = t.test(weight~group,var.equal=FALSE)
+							- does not assume the population variances are equal (welch)
+						- t.test(weight~group,var.equal=TRUE
+							- uses the pooled-variance procedure
+							- assumes the population variances are equal
+		- chisq.test(counts,rep(1/9,9))
+			- rep = 1/9 * 9 times
+		- 
+

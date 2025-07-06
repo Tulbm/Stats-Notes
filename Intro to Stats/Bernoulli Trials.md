@@ -1,0 +1,3 @@
+- trials independent trials
+- there are only two possible outcomes for each trial
+-  the probability of "success" $p$ remains constant for every trial
