@@ -1,5 +1,9 @@
 
 $$
+B(\alpha,\beta)=\left[ \frac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)\Gamma(\beta)} \right]^{-1}
+$$
+
+$$
 \begin{align}
 f_{X|Y}(x|y)  =P(A|B) & =\frac{P(A\cap B)}{P(B)} \\
    & =\frac{P(X=x,Y=y)}{P(Y=y)} \\
