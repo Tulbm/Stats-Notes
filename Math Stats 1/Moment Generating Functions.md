@@ -14,7 +14,7 @@ Using the series expansion for $e^{tx}$ we arrive at a form for the function tha
 $$
 m(t)=1+t\mu_{1}'+ \frac{t^2}{2!}\mu_{2}'+ \frac{t^3}{3!}\mu_{3}'+\dots
 $$
-Derivating removes the unwanted terms from the left, evaluating at $t=0$ eliminates everything from the right
+Taking the derivative removes the unwanted terms from the left, evaluating at $t=0$ eliminates everything from the right
 
 If $a$ and $b$ are constants:
 $$
@@ -38,7 +38,8 @@ If $X$ and $Y$ have the same MGF $\to$ they must have the same pdf
 1. Suppose $X\sim f(x)$, if $M_{X}(t)$ exists then $M_{X}(t)$ and $f(x)$ have a one-to-one correspondence
 
 2. Suppose $X$ and $Y$ are two random variables such that
-$$\begin{align}
+$$
+\begin{align}
 M_{X}  (t) & \longrightarrow M_{Y}(t) \\
   & \text{ then} \\
 f_{X} (x) & \longrightarrow f_{Y}(y)  \quad \forall x ,\forall y
@@ -57,7 +58,8 @@ $$
 
 # [[Binomial Distribution]]
 $X\sim binom(n,p)$
-$$\begin{align}
+$$
+\begin{align}
 M_{X}(t)=E(e^{ xt}) & =\sum e^{xt}f(x) \\
  & = \sum_{x=0}^ne^{xt}{n\choose x}p^x(1-p)^{ n-x} \\
  & =\sum_{x=0}^n{n\choose x} (e^tp)^x(1-p)^{ n-x} \quad \text{(binomial expansion)}\\ 
@@ -75,12 +77,12 @@ $$
 $$
 
 # [[Poisson Distribution]]
-$$\begin{align}M_{X}(t)=E(e^{xt}) & =\sum_{x=0}^\infty e^{ xt} \frac{e^{-\lambda}\lambda^x}{x!} \\
+$$
+\begin{align}M_{X}(t)=E(e^{xt}) & =\sum_{x=0}^\infty e^{ xt} \frac{e^{-\lambda}\lambda^x}{x!} \\
  e^{e^t\lambda}\text{ is a constant} \quad \quad& =e^{-\lambda} e^{e^t\lambda} \sum_{x=0}^\infty \frac{e^{ -e^t\lambda}(e^t\lambda)^x}{x!}  \\
  & =e^{-\lambda}e^{e^t\lambda} \cdot 1 \quad \text{(pmf of poisson)} \\
  & =e^{\lambda(e^t-1)}
 \end{align}
-
 $$
 # [[Gamma Distribution]]
 $$
